@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nacre — Pearl Jewelry Trends on YouTube</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1ea;
+    --surface: #ffffff;
+    --surface-edge: #e8e0d3;
+    --ink: #232a3b;
+    --ink-soft: #6e7686;
+    --gold: #b99a5b;
+    --gold-deep: #93763f;
+    --sheen: #9fb4c7;
+    --coral: #c97b63;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(159,180,199,0.14), transparent 45%),
+      radial-gradient(circle at 90% 0%, rgba(185,154,91,0.10), transparent 40%);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--surface-edge);
+    padding-bottom: 24px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin: 0 0 6px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-deep);
+  }
+
+  .updated {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  .updated span {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  /* --- The Strand: signature element --- */
+  .strand-section {
+    margin-bottom: 48px;
+  }
+
+  .strand-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  .strand {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    padding: 28px 12px 18px;
+    background: var(--surface);
+    border: 1px solid var(--surface-edge);
+    border-radius: var(--radius);
+    overflow-x: auto;
+  }
+
+  .pearl {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, #ffffff 0%, #eadfcd 38%, var(--gold) 100%);
+    border: 1px solid rgba(147,118,63,0.35);
+    box-shadow: 0 2px 6px rgba(35,42,59,0.12);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    position: relative;
+  }
+
+  .pearl:hover {
+    transform: translateY(-4px);
+  }
+
+  .pearl .rank {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+  }
+
+  /* --- Filters --- */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--surface-edge);
+    background: var(--surface);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .chip:hover { border-color: var(--gold); color: var(--ink); }
+
+  .chip.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--surface);
+  }
+
+  /* --- Grid --- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--surface-edge);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 24px rgba(35,42,59,0.10);
+    transform: translateY(-2px);
+  }
+
+  .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--surface-edge);
+  }
+
+  .card-body {
+    padding: 14px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .card-rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-deep);
+  }
+
+  .card-title {
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .card-channel {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .card-stats {
+    margin-top: auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+  }
+
+  .badge-velocity {
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--coral);
+    background: rgba(201,123,99,0.12);
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+
+  /* --- Chart section --- */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-edge);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+
+  .chart-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+
+  #barChart {
+    max-height: 340px;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 32px; }
+    header.top { flex-direction: column; align-items: flex-start; }
+    .updated { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <p class="eyebrow">Daily · Auto-refreshed</p>
+      <h1>Nacre — <em>Pearl Jewelry</em> on YouTube</h1>
+    </div>
+    <div class="updated">
+      Last updated
+      <span id="lastUpdated">—</span>
+    </div>
+  </header>
+
+  <section class="strand-section">
+    <p class="strand-label">The Strand — top videos, sized by view count</p>
+    <div class="strand" id="strand"></div>
+  </section>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="chart-card">
+    <h2>Top 10 by views</h2>
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <footer>Data via the YouTube Data API v3 · Refreshed once daily by a scheduled GitHub Action</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  let allVideos = [];
+  let activeCategory = 'All';
+  let chartInstance = null;
+
+  const grid = document.getElementById('grid');
+  const strand = document.getElementById('strand');
+  const filtersEl = document.getElementById('filters');
+  const lastUpdatedEl = document.getElementById('lastUpdated');
+
+  function formatViews(n) {
+    if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
+    if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K';
+    return String(n);
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  function render() {
+    const filtered = activeCategory === 'All'
+      ? allVideos
+      : allVideos.filter(v => v.category === activeCategory);
+
+    renderStrand(filtered.slice(0, 10));
+    renderGrid(filtered);
+    renderChart(filtered.slice(0, 10));
+  }
+
+  function renderStrand(top) {
+    strand.innerHTML = '';
+    const maxViews = Math.max(...top.map(v => v.views), 1);
+    top.forEach((v, i) => {
+      const size = 28 + Math.round((v.views / maxViews) * 54);
+      const pearl = document.createElement('div');
+      pearl.className = 'pearl';
+      pearl.style.width = size + 'px';
+      pearl.style.height = size + 'px';
+      pearl.title = `${v.title} — ${formatViews(v.views)} views`;
+      const rank = document.createElement('span');
+      rank.className = 'rank';
+      rank.textContent = '#' + (i + 1);
+      pearl.appendChild(rank);
+      pearl.addEventListener('click', () => {
+        const card = document.getElementById('card-' + v.id);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      strand.appendChild(pearl);
+    });
+  }
+
+  function renderGrid(videos) {
+    grid.innerHTML = '';
+    if (videos.length === 0) {
+      grid.innerHTML = '<div class="empty-state">No videos in this category yet. Check back after the next refresh.</div>';
+      return;
+    }
+    videos.forEach((v, i) => {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.id = 'card-' + v.id;
+      a.href = v.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+
+      const velocityBadge = (v.velocity && v.velocity > (v.views * 0.15))
+        ? `<span class="badge-velocity">Rising fast</span>` : '';
+
+      a.innerHTML = `
+        <img class="thumb" src="${v.thumbnail || ''}" alt="" loading="lazy" onerror="this.style.opacity=0" />
+        <div class="card-body">
+          <span class="card-rank">#${i + 1} · ${v.category}</span>
+          <p class="card-title">${escapeHtml(v.title)}</p>
+          <p class="card-channel">${escapeHtml(v.channel)}</p>
+          <div class="card-stats">
+            <span>${formatViews(v.views)} views</span>
+            ${velocityBadge}
+          </div>
+        </div>
+      `;
+      grid.appendChild(a);
+    });
+  }
+
+  function renderChart(top) {
+    const ctx = document.getElementById('barChart');
+    const labels = top.map(v => v.title.length > 28 ? v.title.slice(0, 28) + '…' : v.title);
+    const data = top.map(v => v.views);
+
+    if (chartInstance) chartInstance.destroy();
+    chartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          data,
+          backgroundColor: '#b99a5b',
+          borderRadius: 6,
+          maxBarThickness: 34,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { ticks: { callback: (v) => formatViews(v) }, grid: { color: '#e8e0d3' } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  }
+
+  function renderFilters(categories) {
+    filtersEl.innerHTML = '';
+    ['All', ...categories].forEach(cat => {
+      const chip = document.createElement('button');
+      chip.className = 'chip' + (cat === activeCategory ? ' active' : '');
+      chip.textContent = cat;
+      chip.addEventListener('click', () => {
+        activeCategory = cat;
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        render();
+      });
+      filtersEl.appendChild(chip);
+    });
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  fetch('./data.json?cachebust=' + Date.now())
+    .then(res => res.json())
+    .then(json => {
+      allVideos = json.videos || [];
+      lastUpdatedEl.textContent = formatDate(json.generatedAt);
+      const categories = [...new Set(allVideos.map(v => v.category))].sort();
+      renderFilters(categories);
+      render();
+    })
+    .catch(err => {
+      grid.innerHTML = '<div class="empty-state">Could not load data.json yet. Once the daily action runs, this dashboard will populate automatically.</div>';
+      console.error(err);
+    });
+</script>
+</body>
+</html>

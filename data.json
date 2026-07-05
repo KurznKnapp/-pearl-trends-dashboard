@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-07-05T06:00:00+00:00",
+  "videoCount": 8,
+  "videos": [
+    {
+      "id": "sample1",
+      "title": "How to Style Pearls Like a Modern Minimalist",
+      "channel": "Atelier Lumière",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-28T12:00:00Z",
+      "views": 412000,
+      "likes": 18500,
+      "comments": 620,
+      "velocity": 58857.1,
+      "category": "Styling & Trends",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample2",
+      "title": "Tahitian Pearl Necklace Unboxing + Try-On",
+      "channel": "Pearl & Stone",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-20T09:00:00Z",
+      "views": 305000,
+      "likes": 12100,
+      "comments": 410,
+      "velocity": 20333.3,
+      "category": "Necklaces",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample3",
+      "title": "Freshwater Pearl Earrings: 5 Ways to Wear Them",
+      "channel": "Studio Nacre",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-15T09:00:00Z",
+      "views": 198000,
+      "likes": 8700,
+      "comments": 260,
+      "velocity": 9900.0,
+      "category": "Earrings",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample4",
+      "title": "Akoya Pearl Ring Review After 1 Year",
+      "channel": "Gem Journal",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-05-30T09:00:00Z",
+      "views": 152000,
+      "likes": 6100,
+      "comments": 180,
+      "velocity": 4342.9,
+      "category": "Rings",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample5",
+      "title": "Pearl Jewelry Trends for 2026",
+      "channel": "The Jewel Report",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-07-01T09:00:00Z",
+      "views": 89000,
+      "likes": 4200,
+      "comments": 150,
+      "velocity": 22250.0,
+      "category": "Styling & Trends",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample6",
+      "title": "Stacking Pearl Bracelets: A Beginner's Guide",
+      "channel": "Pearl & Stone",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-10T09:00:00Z",
+      "views": 76000,
+      "likes": 3100,
+      "comments": 90,
+      "velocity": 3040.0,
+      "category": "Bracelets",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample7",
+      "title": "Vintage Pearl Choker Restoration",
+      "channel": "Studio Nacre",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-05T09:00:00Z",
+      "views": 54000,
+      "likes": 2400,
+      "comments": 70,
+      "velocity": 1800.0,
+      "category": "Necklaces",
+      "url": "https://www.youtube.com/"
+    },
+    {
+      "id": "sample8",
+      "title": "Baroque Pearl Earrings Try-On Haul",
+      "channel": "Atelier Lumière",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "publishedAt": "2026-06-25T09:00:00Z",
+      "views": 41000,
+      "likes": 1900,
+      "comments": 55,
+      "velocity": 4100.0,
+      "category": "Earrings",
+      "url": "https://www.youtube.com/"
+    }
+  ]
+}
